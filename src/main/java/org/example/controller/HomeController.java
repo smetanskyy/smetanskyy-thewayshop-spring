@@ -5,14 +5,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class HomeController {
-    @RequestMapping("/")
-    public String Index(){
+    @RequestMapping({"/", "/home"})
+    public String Home(){
         return "home";
     }
 
-    @RequestMapping("/home")
-    public String Home(){
-        return "home";
+    @RequestMapping("/about")
+    public String About(){
+        return "about";
     }
 
 }
