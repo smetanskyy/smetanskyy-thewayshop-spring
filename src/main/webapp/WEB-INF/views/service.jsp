@@ -1,35 +1,37 @@
-<%@ taglib prefix="c" uri="http://www.springframework.org/tags" %>
 <%--
   Created by IntelliJ IDEA.
   User: methan
   Date: 15.07.2020
-  Time: 20:43
+  Time: 21:40
   To change this template use File | Settings | File Templates.
 --%>
+<%@ taglib prefix="c" uri="http://www.springframework.org/tags" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
 
 <%@include file="templates/header.jsp"%>
 <%@include file="templates/headerInternal.jsp"%>
-
-<!-- Start About Page  -->
-<div class="about-box-main">
+<!-- Start Services  -->
+<div class="services-box-main">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-6">
-                <h2 class="noo-sh-title">We are <span>ThewayShop</span></h2>
-                <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
-                    voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,
-                    sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?
-                    Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                </p>
-            </div>
-            <div class="col-lg-6">
-                <div class="banner-frame"> <img class="img-thumbnail img-fluid" src="<c:url value="/resources/images/about-img.jpg"/>" alt="" />
+        <div class="row my-5">
+            <div class="col-sm-6 col-lg-4">
+                <div class="service-block-inner">
+                    <h3>OUR MISSION</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
                 </div>
             </div>
-        </div>
-        <div class="row my-5">
+            <div class="col-sm-6 col-lg-4">
+                <div class="service-block-inner">
+                    <h3>OUR VISION</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-4">
+                <div class="service-block-inner">
+                    <h3>OUR PHILOSOPHY</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                </div>
+            </div>
             <div class="col-sm-6 col-lg-4">
                 <div class="service-block-inner">
                     <h3>We are Trusted</h3>
@@ -44,11 +46,12 @@
             </div>
             <div class="col-sm-6 col-lg-4">
                 <div class="service-block-inner">
-                    <h3>We are Expert</h3>
+                    <h3>OUR STORIES</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
                 </div>
             </div>
         </div>
+
         <div class="row my-4">
             <div class="col-12">
                 <h2 class="noo-sh-title">Meet Our Team</h2>
@@ -158,9 +161,9 @@
                     <hr class="my-0"> </div>
             </div>
         </div>
+
     </div>
 </div>
-<!-- End About Page -->
-
+<!-- End Services -->
 <%@include file="templates/instagramFeed.jsp"%>
 <%@include file="templates/footer.jsp"%>

@@ -6,7 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ taglib prefix="c" uri="http://www.springframework.org/tags" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
+
 <!DOCTYPE html>
 <html lang="en">
 <!-- Basic -->
@@ -79,7 +80,7 @@
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                 <div class="custom-select-box">
-                    <select id="basic" class="selectpicker show-tick form-control" data-placeholder="$ USD">
+                    <select aria-label="select" id="basic" class="selectpicker show-tick form-control" data-placeholder="$ USD">
                         <option>¥ JPY</option>
                         <option>$ USD</option>
                         <option>€ EUR</option>
@@ -118,9 +119,13 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="navbar-menu">
                 <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
-                    <li class="nav-item active"><a class="nav-link" href="<c:url value="/home"/>">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="<c:url value="/about"/>">About Us</a></li>
-                    <li class="dropdown megamenu-fw">
+                    <li class="nav-item ${pageContext.request.requestURI.contains('views/home') ? 'active' : ''}">
+                        <a class="nav-link" href="<c:url value="/home"/>">Home</a>
+                    </li>
+                    <li class="nav-item ${pageContext.request.requestURI.contains('views/about') ? 'active' : ''}">
+                        <a class="nav-link" href="<c:url value="/about"/>">About Us</a>
+                    </li>
+                    <li class="dropdown megamenu-fw ${pageContext.request.requestURI.contains('views/product') ? 'active' : ''}">
                         <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Product</a>
                         <ul class="dropdown-menu megamenu-content" role="menu">
                             <li>
@@ -177,7 +182,7 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="dropdown">
+                    <li class="dropdown ${pageContext.request.requestURI.contains('views/shop') ? 'active' : ''}">
                         <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">SHOP</a>
                         <ul class="dropdown-menu">
                             <li><a href="<c:url value="/cart"/>">Cart</a></li>
@@ -187,8 +192,12 @@
                             <li><a href="<c:url value="/shop-detail"/>">Shop Detail</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="<c:url value="/service"/>">Our Service</a></li>
-                    <li class="nav-item"><a class="nav-link" href="<c:url value="/contact-us"/>">Contact Us</a></li>
+                    <li class="nav-item ${pageContext.request.requestURI.contains('views/service') ? 'active' : ''}">
+                        <a class="nav-link" href="<c:url value="/service"/>">Our Service</a>
+                    </li>
+                    <li class="nav-item ${pageContext.request.requestURI.contains('views/contact') ? 'active' : ''}">
+                        <a class="nav-link" href="<c:url value="/contact"/>">Contact Us</a>
+                    </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -208,7 +217,7 @@
         <!-- Start Side Menu -->
         <div class="side">
             <a href="#" class="close-side"><i class="fa fa-times"></i></a>
-            <li class="cart-box">
+            <div class="cart-box">
                 <ul class="cart-list">
                     <li>
                         <a href="#" class="photo"><img src="<c:url value="/resources/images/img-pro-01.jpg"/>" class="cart-thumb" alt="" /></a>
@@ -230,7 +239,7 @@
                         <span class="float-right"><strong>Total</strong>: $180.00</span>
                     </li>
                 </ul>
-            </li>
+            </div>
         </div>
         <!-- End Side Menu -->
     </nav>
@@ -243,7 +252,7 @@
     <div class="container">
         <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-search"></i></span>
-            <input type="text" class="form-control" placeholder="Search">
+            <input aria-label="search" type="text" class="form-control" placeholder="Search">
             <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
         </div>
     </div>
