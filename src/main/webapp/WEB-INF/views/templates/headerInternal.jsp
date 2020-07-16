@@ -15,7 +15,7 @@
             <div class="col-lg-12">
                 <h2>${title}</h2>
                 <ul class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="<c:url value="/home"/>">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">${preTitle}</a></li>
                     <li class="breadcrumb-item active">${title}</li>
                 </ul>
             </div>

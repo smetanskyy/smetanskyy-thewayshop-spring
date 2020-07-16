@@ -7,6 +7,8 @@
 --%>
 <%@ taglib prefix="c" uri="http://www.springframework.org/tags" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
+<c:url value="javax.servlet.forward.request_uri" var="getUrl"/>
+<c:url value="${pageContext.request.requestURI}" var="getUri"/>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -119,14 +121,15 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="navbar-menu">
                 <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
-                    <li class="nav-item ${pageContext.request.requestURI.contains('views/home') ? 'active' : ''}">
+                    <li class="nav-item ${getUri.contains('views/home') ? 'active' : ''}">
                         <a class="nav-link" href="<c:url value="/home"/>">Home</a>
                     </li>
                     <li class="nav-item ${pageContext.request.requestURI.contains('views/about') ? 'active' : ''}">
                         <a class="nav-link" href="<c:url value="/about"/>">About Us</a>
                     </li>
-                    <li class="dropdown megamenu-fw ${pageContext.request.requestURI.contains('views/product') ? 'active' : ''}">
+                    <li class="dropdown megamenu-fw ${requestScope[getUrl].contains('/product/') ? 'active' : ''}">
                         <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Product</a>
+                        <c:url value="/product/shop" var="shop"/>
                         <ul class="dropdown-menu megamenu-content" role="menu">
                             <li>
                                 <div class="row">
@@ -134,10 +137,10 @@
                                         <h6 class="title">Top</h6>
                                         <div class="content">
                                             <ul class="menu-col">
-                                                <li><a href="<c:url value="/shop"/>">Jackets</a></li>
-                                                <li><a href="<c:url value="/shop"/>">Shirts</a></li>
-                                                <li><a href="<c:url value="/shop"/>">Sweaters & Cardigans</a></li>
-                                                <li><a href="<c:url value="/shop"/>">T-shirts</a></li>
+                                                <li><a href="${shop}">Jackets</a></li>
+                                                <li><a href="${shop}">Shirts</a></li>
+                                                <li><a href="${shop}">Sweaters & Cardigans</a></li>
+                                                <li><a href="${shop}">T-shirts</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -146,10 +149,10 @@
                                         <h6 class="title">Bottom</h6>
                                         <div class="content">
                                             <ul class="menu-col">
-                                                <li><a href="<c:url value="/shop"/>">Swimwear</a></li>
-                                                <li><a href="<c:url value="/shop"/>">Skirts</a></li>
-                                                <li><a href="<c:url value="/shop"/>">Jeans</a></li>
-                                                <li><a href="<c:url value="/shop"/>">Trousers</a></li>
+                                                <li><a href="${shop}">Swimwear</a></li>
+                                                <li><a href="${shop}">Skirts</a></li>
+                                                <li><a href="${shop}">Jeans</a></li>
+                                                <li><a href="${shop}">Trousers</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -158,10 +161,10 @@
                                         <h6 class="title">Clothing</h6>
                                         <div class="content">
                                             <ul class="menu-col">
-                                                <li><a href="<c:url value="/shop"/>">Top Wear</a></li>
-                                                <li><a href="<c:url value="/shop"/>">Party wear</a></li>
-                                                <li><a href="<c:url value="/shop"/>">Bottom Wear</a></li>
-                                                <li><a href="<c:url value="/shop"/>">Indian Wear</a></li>
+                                                <li><a href="${shop}">Top Wear</a></li>
+                                                <li><a href="${shop}">Party wear</a></li>
+                                                <li><a href="${shop}">Bottom Wear</a></li>
+                                                <li><a href="${shop}">Indian Wear</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -169,10 +172,10 @@
                                         <h6 class="title">Accessories</h6>
                                         <div class="content">
                                             <ul class="menu-col">
-                                                <li><a href="<c:url value="/shop"/>">Bags</a></li>
-                                                <li><a href="<c:url value="/shop"/>">Sunglasses</a></li>
-                                                <li><a href="<c:url value="/shop"/>">Fragrances</a></li>
-                                                <li><a href="<c:url value="/shop"/>">Wallets</a></li>
+                                                <li><a href="${shop}">Bags</a></li>
+                                                <li><a href="${shop}">Sunglasses</a></li>
+                                                <li><a href="${shop}">Fragrances</a></li>
+                                                <li><a href="${shop}">Wallets</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -182,14 +185,14 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="dropdown ${pageContext.request.requestURI.contains('views/shop') ? 'active' : ''}">
-                        <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">SHOP</a>
+                    <li class="dropdown ${requestScope[getUrl].contains('/shop/') ? 'active' : ''}">
+                        <a href="${pageContext.request.contextPath}/" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">SHOP</a>
                         <ul class="dropdown-menu">
-                            <li><a href="<c:url value="/cart"/>">Cart</a></li>
-                            <li><a href="<c:url value="/checkout"/>">Checkout</a></li>
-                            <li><a href="<c:url value="/my-account"/>">My Account</a></li>
-                            <li><a href="<c:url value="/wishlist"/>">Wishlist</a></li>
-                            <li><a href="<c:url value="/shop-detail"/>">Shop Detail</a></li>
+                            <li><a href="<c:url value="/shop/cart"/>">Cart</a></li>
+                            <li><a href="<c:url value="/shop/checkout"/>">Checkout</a></li>
+                            <li><a href="<c:url value="/shop/my-account"/>">My Account</a></li>
+                            <li><a href="<c:url value="/shop/wishlist"/>">Wishlist</a></li>
+                            <li><a href="<c:url value="/shop/shop-detail"/>">Shop Detail</a></li>
                         </ul>
                     </li>
                     <li class="nav-item ${pageContext.request.requestURI.contains('views/service') ? 'active' : ''}">
