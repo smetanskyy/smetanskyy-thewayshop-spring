@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: methan
-  Date: 19.07.2020
-  Time: 9:35
+  Date: 26.07.2020
+  Time: 12:55
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" %>
@@ -174,29 +174,31 @@
                             <div role="tabpanel" class="tab-pane fade show active" id="grid-view">
                                 <div class="row">
                                     <myC:forEach var="product" items="${products}">
-                                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
-                                        <div class="products-single fix">
-                                            <div class="box-img-hover">
-                                                <div class="type-lb">
-                                                    <p class="sale">Sale</p>
+                                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                                            <div class="products-single fix">
+                                                <div class="box-img-hover">
+                                                    <div class="type-lb">
+                                                        <p class="sale">Sale</p>
+                                                    </div>
+                                                    <img src="${resources}images/img-pro-01.jpg" class="img-fluid" alt="Image">
+                                                    <div class="mask-icon">
+                                                        <ul>
+                                                            <li><a href="<c:url value="/productList/viewProduct/${product.productId}"/>" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
+                                                            <li><a href="<c:url value="/productList/addToWishList/${product.productId}"/>" data-toggle="tooltip" data-placement="right" title="Add to Wishlist">
+                                                                <i class="${product.wish == false ? "far fa-heart" : "fas fa-archive"}"></i></a></li>
+                                                            <li><a href="<c:url value="/admin/productInventory/delete/${product.productId}"/>" data-toggle="tooltip" data-placement="right" title="Delete from DataBase">
+                                                                <i class="fas fa-trash"></i></a></li>
+                                                        </ul>
+                                                        <a class="cart" href="#">Add to Cart</a>
+                                                    </div>
                                                 </div>
-                                                <img src="${resources}images/img-pro-01.jpg" class="img-fluid" alt="Image">
-                                                <div class="mask-icon">
-                                                    <ul>
-                                                        <li><a href="<c:url value="/productList/viewProduct/${product.productId}"/>" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                                        <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
-                                                        <li><a href="<c:url value="/productList/addToWishList/${product.productId}"/>" data-toggle="tooltip" data-placement="right" title="Add to Wishlist">
-                                                            <i class="${product.wish == false ? "far fa-heart" : "fas fa-archive"}"></i></a></li>
-                                                    </ul>
-                                                    <a class="cart" href="#">Add to Cart</a>
+                                                <div class="why-text">
+                                                    <h4><a href="<c:url value="/productList/viewProduct"/>">Lorem ipsum dolor sit amet</a></h4>
+                                                    <h5> $9.79</h5>
                                                 </div>
-                                            </div>
-                                            <div class="why-text">
-                                                <h4><a href="<c:url value="/productList/viewProduct"/>">Lorem ipsum dolor sit amet</a></h4>
-                                                <h5> $9.79</h5>
                                             </div>
                                         </div>
-                                    </div>
                                     </myC:forEach>
                                 </div>
                             </div>

@@ -53,12 +53,12 @@ public class HomeController {
         return "my-account";
     }
 
-    @RequestMapping("/shop/wishlist")
-    public String Wishlist(Model model){
-        model.addAttribute("preTitle", "Shop");
-        model.addAttribute("title", "Wishlist");
-        return "wishlist";
-    }
+//    @RequestMapping("/shop/wishlist")
+//    public String Wishlist(Model model){
+//        model.addAttribute("preTitle", "Shop");
+//        model.addAttribute("title", "Wishlist");
+//        return "wishlist";
+//    }
 
     @RequestMapping("/shop/shop-detail")
     public String ShopDetail(Model model){

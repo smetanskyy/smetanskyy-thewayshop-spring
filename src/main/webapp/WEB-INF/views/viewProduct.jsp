@@ -45,13 +45,12 @@
             </div>
             <div class="col-xl-7 col-lg-7 col-md-6">
                 <div class="single-product-details">
-                    <h2>Fachion Lorem ipsum dolor sit amet</h2>
-                    <h5> <del>$ 60.00</del> $40.79</h5>
+                    <h2>${product.productName}</h2>
+                    <h5> <del>$ ${product.productPrice}</del> $${product.productPrice}</h5>
                     <p class="available-stock"><span> More than 20 available / <a href="#">8 sold </a></span>
                     <p>
                     <h4>Short Description:</h4>
-                    <p>Nam sagittis a augue eget scelerisque. Nullam lacinia consectetur sagittis. Nam sed neque id eros fermentum dignissim quis at tortor. Nullam ultricies urna quis sem sagittis pharetra. Nam erat turpis, cursus in ipsum at,
-                        tempor imperdiet metus. In interdum id nulla tristique accumsan. Ut semper in quam nec pretium. Donec egestas finibus suscipit. Curabitur tincidunt convallis arcu. </p>
+                    <p>${product.productDescription}</p>
                     <ul>
                         <li>
                             <div class="form-group size-st">
