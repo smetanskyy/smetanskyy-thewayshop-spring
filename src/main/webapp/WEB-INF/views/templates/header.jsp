@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ taglib prefix="c" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="myC" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <c:url value="javax.servlet.forward.request_uri" var="getUrl"/>
 <c:url value="${pageContext.request.requestURI}" var="getUri"/>
@@ -127,7 +128,7 @@
                     <li class="nav-item ${pageContext.request.requestURI.contains('views/about') ? 'active' : ''}">
                         <a class="nav-link" href="<c:url value="/about"/>">About Us</a>
                     </li>
-                    <li class="dropdown megamenu-fw ${requestScope[getUrl].contains('/product/') ? 'active' : ''}">
+                    <li class="dropdown megamenu-fw ${requestScope[getUrl].contains('/product') ? 'active' : ''}">
                         <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Product</a>
                         <c:url value="/product/shop" var="shop"/>
                         <ul class="dropdown-menu megamenu-content" role="menu">
